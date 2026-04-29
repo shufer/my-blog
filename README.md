@@ -1,63 +1,163 @@
-# Astro Starter Kit: Blog
+# 🚀 My Tech Blog - DevOps Learning Project
 
-```sh
-npm create astro@latest -- --template blog
-```
+> A modern personal tech blog built with **Astro** and deployed using DevOps best practices.
+> This is a hands-on learning project to master modern infrastructure and CI/CD tools.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[![Deployed on Cloudflare Pages](https://img.shields.io/badge/Deployed%20on-Cloudflare%20Pages-F38020?logo=cloudflare&logoColor=white)](https://my-blog-9gi.pages.dev)
+[![Built with Astro](https://img.shields.io/badge/Built%20with-Astro-BC52EE?logo=astro&logoColor=white)](https://astro.build)
+[![Docker](https://img.shields.io/badge/Containerized-Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com)
 
-Features:
+## 🌐 Live Demo
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+**👉 [https://my-blog-9gi.pages.dev](https://my-blog-9gi.pages.dev)**
 
-## 🚀 Project Structure
+## 📖 About This Project
 
-Inside of your Astro project, you'll see the following folders and files:
+This project serves as a hands-on learning platform for modern DevOps practices.
+Starting from a basic Astro blog, I'm progressively integrating production-grade
+infrastructure technologies to build a complete CI/CD pipeline.
 
-```text
-├── public/
+## ✅ Currently Implemented (Phase 1-2)
+
+- [x] **Static Blog**: Built with Astro 4.x for optimal performance
+- [x] **Containerization**: Docker multi-stage build for minimal image size
+- [x] **CI/CD**: Automated deployment via Cloudflare Pages
+- [x] **Production Deployment**: Live on Cloudflare's global CDN
+- [x] **HTTPS**: Automatic SSL/TLS certificate
+- [x] **Version Control**: Git workflow with conventional commits
+
+## 🔄 Roadmap (Learning In Progress)
+
+### Phase 3: Container Orchestration
+- [ ] Local Kubernetes cluster (Kind)
+- [ ] Deployment & Service manifests
+- [ ] Helm charts
+
+### Phase 4: GitOps
+- [ ] ArgoCD installation
+- [ ] GitOps-driven deployments
+- [ ] Multi-environment support
+
+### Phase 5: Cloud Infrastructure
+- [ ] AWS EKS deployment
+- [ ] Terraform IaC
+- [ ] VPC & networking
+
+### Phase 6: Observability
+- [ ] Prometheus metrics
+- [ ] Grafana dashboards
+- [ ] Loki log aggregation
+
+## 🏗️ Current Architecture
+
+\`\`\`
+Developer (writes content)
+    ↓
+Git Push to GitHub
+    ↓
+Cloudflare Pages (auto-detects)
+    ↓
+Build (npm run build)
+    ↓
+Deploy to Global CDN
+    ↓
+Live at my-blog-9gi.pages.dev
+\`\`\`
+
+## 🛠️ Tech Stack
+
+### Application
+- **Framework**: Astro 4.x
+- **Language**: TypeScript
+- **Styling**: Native CSS
+
+### Infrastructure
+- **Container**: Docker (multi-stage build)
+- **Web Server**: Nginx Alpine
+- **CI/CD**: Cloudflare Pages
+- **CDN**: Cloudflare Global Network
+- **Version Control**: Git / GitHub
+
+## 🚀 Quick Start
+
+### Local Development
+
+\`\`\`bash
+# Clone the repository
+git clone https://github.com/shufer/my-blog.git
+cd my-blog
+
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+# → http://localhost:4321
+\`\`\`
+
+### Docker
+
+\`\`\`bash
+# Build image
+docker build -t my-blog:v1 .
+
+# Run container
+docker run -d -p 8080:80 --name my-blog my-blog:v1
+# → http://localhost:8080
+
+# Stop and clean up
+docker stop my-blog && docker rm my-blog
+\`\`\`
+
+## 📁 Project Structure
+
+\`\`\`
+my-blog/
+├── .github/              # GitHub Actions (planned)
+├── public/               # Static assets
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+│   ├── components/       # Astro components
+│   ├── content/          # Blog posts (Markdown)
+│   ├── layouts/          # Page layouts
+│   ├── pages/            # Routes
+│   └── styles/           # Global styles
+├── Dockerfile            # Multi-stage build
+├── .dockerignore         # Docker ignore rules
+├── astro.config.mjs      # Astro configuration
+└── package.json          # Dependencies
+\`\`\`
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🎯 Learning Goals
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+This project is designed to systematically master modern DevOps practices:
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+| Skill | Status |
+|-------|--------|
+| Docker & Containerization | ✅ Done |
+| CI/CD Pipelines | ✅ Done (Cloudflare Pages) |
+| Kubernetes | 🔄 In Progress |
+| GitOps (ArgoCD) | 📋 Planned |
+| Infrastructure as Code (Terraform) | 📋 Planned |
+| Cloud (AWS EKS) | 📋 Planned |
+| Observability (Prometheus/Grafana) | 📋 Planned |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 📚 What I've Learned So Far
 
-## 🧞 Commands
+- Multi-stage Docker builds for optimized image size (~25MB vs ~1.5GB)
+- The importance of \`.dockerignore\` for build context optimization
+- GitOps principles: Git as the single source of truth
+- Modern CDN-based deployment vs traditional server hosting
+- Container vs traditional deployment workflows
 
-All commands are run from the root of the project, from a terminal:
+## 📝 License
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+MIT License - feel free to use this project as a learning reference.
 
-## 👀 Want to learn more?
+## 🙋 About Me
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Currently learning DevOps and aiming to grow into a Platform Engineer / SRE role.
+This blog itself documents my learning journey.
 
-## Credit
+---
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+**Built with ❤️ by [shufer](https://github.com/shufer)**
